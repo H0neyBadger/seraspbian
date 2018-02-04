@@ -3,6 +3,7 @@ YOLO
 ----
 ```bash
 rsync -arv --rsync-path="sudo rsync" ./linux/data/* raspberrypi:/
+#To run after the first reboot depmod -a
 ```
 
 pi config
