@@ -13,4 +13,17 @@ RUN apt-get install -y \
   libavcodec-dev \
   libsdl2-dev \
   libsdl-image1.2-dev \
-  libxml2-dev yasm
+  libxml2-dev \
+  yasm
+
+# build args 
+ARG OWNER_UID
+ARG OWNER_GID
+
+# BUILD as non-root user
+RUN groupadd --gid "${OWNER_GID}" "builder" 
+RUN useradd --uid "${OWNER_UID}" \
+  --gid "${OWNER_GID}" \
+  "builder"
+
+USER builder

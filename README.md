@@ -15,7 +15,7 @@ Run
 ---
 
 ```bash
-./docker_build.sh
+sudo ./docker_build.sh
 ```
 
 Or from debian OS
@@ -29,4 +29,11 @@ Finally, the compiled files are available from
 boot  lib
 ```
 
+Docker build on SELinux
+-----------------------
+You may need to configure the local directory to allow docker to mount the build directory 
+```
+sudo semanage fcontext --add "$(pwd)(/.*)?" --type container_file_t
+sudo restorecon -Rv "$(pwd)"
+```
 
