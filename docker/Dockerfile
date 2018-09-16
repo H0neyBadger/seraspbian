@@ -14,7 +14,8 @@ RUN apt-get install -y \
   libsdl2-dev \
   libsdl-image1.2-dev \
   libxml2-dev \
-  yasm
+  yasm \
+  kmod
 
 # build args 
 ARG OWNER_UID
