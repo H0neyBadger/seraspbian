@@ -7,8 +7,7 @@ git clone --depth=1 https://github.com/raspberrypi/tools || (cd ./tools; git pul
 git clone --depth=1 https://github.com/raspberrypi/linux || (cd ./linux; git pull)
 #set -e
 
-echo PATH=\$PATH:$(pwd)/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin >> ~/.bashrc
-source ~/.bashrc
+export PATH="$PATH:$(pwd)/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin"
 
 #echo $PATH
 
